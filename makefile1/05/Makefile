@@ -20,9 +20,17 @@ LD = ld
 
 LDFLAGS =
 
-$(TGT) : $(SUB_DIR)
-	$(CC) $(CFLAGS)
+$(TGT): $(SUB_DIR)
+	$(CC) $(CFLAGS) $(^:=/$(SUB_TGT))
 
+$(SUB_DIR):
+	make -C $@
+
+clean:
+	rm -vf $(TGT)
+	for dir in $(SUB_DIR); do \
+		\
+		done
 
 
 
