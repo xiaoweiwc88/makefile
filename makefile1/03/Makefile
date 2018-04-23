@@ -1,5 +1,5 @@
 TGT = a.out
-SRCS = test.c tst.c
+SRCS = main.c tst.c
 #OBJ = test.o tst.o
 CC = gcc
 
@@ -27,4 +27,4 @@ $(TGT): $(SRCS:.c=.o)
 	$(CC) $< -c
 
 clean:
-	rm -f $(TGT) $(OBJ)
+	rm -f $(TGT) $(SRCS:.c=.o)
